@@ -1,1 +1,50 @@
 
+from turtle import Turtle, Screen
+import random
+
+tim = Turtle()
+sc = Screen()
+sc.setup(width=1000, height=1000)
+
+
+def move_forward():
+    tim.forward(10)
+
+
+def move_backward():
+    tim.backward(10)
+
+
+def turn_left():
+    tim.setheading(tim.heading() + 10)
+
+
+def turn_right():
+    tim.setheading(tim.heading() - 10)
+
+
+def penup():
+    tim.penup()
+
+
+def pendown():
+    tim.pendown()
+
+
+def clear():
+    tim.clear()
+    penup()
+    tim.home()
+    pendown()
+
+
+sc.listen()
+sc.onkey(move_forward, 'w')
+sc.onkey(move_backward, 's')
+sc.onkey(turn_left, 'a')
+sc.onkey(turn_right, 'd')
+sc.onkey(penup, 'q')
+sc.onkey(pendown, 'e')
+sc.onkey(clear, 'c')
+
+sc.exitonclick()
